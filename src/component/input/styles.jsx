@@ -69,7 +69,7 @@ export const TextInputNote = styled.TextInput`
   border-radius: 5px;
   padding-left: 10px;
   background: white;
-  height: 150px;
   display: flex;
-  
+  padding-bottom: 105px;
+  flex-shrink: 1;
 `

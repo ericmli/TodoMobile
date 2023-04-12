@@ -8,7 +8,6 @@ import { Button } from '../../component/button'
 import RadioButton from '../../component/radio'
 import DatePicker from 'react-native-date-picker'
 import api from '../../service'
-import SvgBorder2 from '../../img/svg/borderMain2'
 
 const obj = [
   {
@@ -31,8 +30,8 @@ export function Create({ navigation }) {
     bck: '#DBECF6'
   })
   const [selectedColor, setSelectedColor] = useState(0)
-  const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
+  const [date, setDate] = useState(new Date())
 
   const schema = yup.object().shape({
     title: yup.string().max(15, 'Number of Characters Exceeded')

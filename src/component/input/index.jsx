@@ -69,7 +69,6 @@ export function InputNote({ name, errors, inputRef, control, onSubmitEditing, pl
             ref={inputRef}
             onSubmitEditing={onSubmitEditing}
             placeholder={placeholder}
-
           />
         )}
       />
