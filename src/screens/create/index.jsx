@@ -68,7 +68,6 @@ export function Create({ navigation }) {
   return (
     <Container>
       <Background>
-        <SvgBorder2/>
         <Close onPress={() => navigation.goBack()}><IconClose>X</IconClose></Close>
         <TextTitle>Add New Task</TextTitle>
       </Background>
