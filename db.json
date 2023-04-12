@@ -26,18 +26,10 @@
     {
       "title": "Game meetup",
       "time": "1:00pm",
-      "status": true,
+      "status": false,
       "img": "https://cdn-icons-png.flaticon.com/128/8158/8158887.png",
       "bck": "#E7E2F3",
       "id": 4
-    },
-    {
-      "title": "Limpar A Casa",
-      "time": "12:00:00 PM",
-      "status": false,
-      "img": "https://cdn-icons-png.flaticon.com/128/8462/8462616.png",
-      "bck": "#FEF5D3",
-      "id": 5
     }
   ]
 }
