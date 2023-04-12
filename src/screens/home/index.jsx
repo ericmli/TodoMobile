@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FlatList } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { CheckBorder, CheckBorderFalse, Container, ContainerList, ContainerListFalse, ContainerTop, ImageIcon, List, ListContainerText, ListContainerTextFalse, ListFalse, TextBody, TextBodyFalse, TextBodyTime, TextBodyTimeFalse, TextCompleted, TextTime, TextTitle, ViewImg, ViewImgFalse } from './styles'
@@ -6,16 +6,19 @@ import api from '../../service'
 import SvgCheck from '../../img/svg/check'
 import { Background } from '../../component/background'
 import { Button } from '../../component/button'
+import { useFocusEffect } from '@react-navigation/native'
 
 export function Home({ navigation }) {
   const [data, setData] = useState([])
   const [item, setItem] = useState([])
   const [itemFalse, setItemFalse] = useState([])
 
-  useEffect(() => {
-    hangleItem()
-    pickItem()
-  }, [])
+  useFocusEffect(
+    React.useCallback(() => {
+      hangleItem()
+      pickItem()
+    }, [])
+  )
 
   async function hangleItem() {
     setData(await AsyncStorage.getItem('date'))

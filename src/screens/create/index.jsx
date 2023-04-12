@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Background, Category, Close, Container, ContainerDateTime, ContainerRadio, ContainerText, IconClose, TextTitle } from './styles'
+import { Background, BorderRadio, Category, Close, Container, ContainerDateTime, ContainerRadio, ContainerText, IconClose, TextTitle } from './styles'
 import { Input, InputDate, InputNote, InputTime } from '../../component/input'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -8,9 +8,29 @@ import { Button } from '../../component/button'
 import RadioButton from '../../component/radio'
 import DatePicker from 'react-native-date-picker'
 import api from '../../service'
+import SvgBorder2 from '../../img/svg/borderMain2'
+
+const obj = [
+  {
+    img: 'https://cdn-icons-png.flaticon.com/128/9662/9662131.png',
+    bck: '#DBECF6'
+  },
+  {
+    img: 'https://cdn-icons-png.flaticon.com/128/8462/8462616.png',
+    bck: '#E7E2F3'
+  },
+  {
+    img: 'https://cdn-icons-png.flaticon.com/128/8462/8462616.png',
+    bck: '#FEF5D3'
+  }
+]
 
 export function Create({ navigation }) {
-  const [selected, setSelected] = useState()
+  const [selected, setSelected] = useState({
+    img: 'https://cdn-icons-png.flaticon.com/128/9662/9662131.png',
+    bck: '#DBECF6'
+  })
+  const [selectedColor, setSelectedColor] = useState(0)
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
 
@@ -26,24 +46,8 @@ export function Create({ navigation }) {
   })
 
   async function setCategoryOnPress(item) {
-    console.log(item)
-    if (item === 1) {
-      setSelected({
-        img: 'https://cdn-icons-png.flaticon.com/128/9662/9662131.png',
-        bck: '#DBECF6'
-      })
-    } else if (item === 2) {
-      setSelected({
-        img: 'https://cdn-icons-png.flaticon.com/128/8462/8462616.png',
-        bck: '#E7E2F3'
-      })
-    } else {
-      setSelected({
-        img: 'https://cdn-icons-png.flaticon.com/128/8462/8462616.png',
-        bck: '#FEF5D3'
-      })
-    }
-    console.log(selected)
+    setSelected(obj[item])
+    setSelectedColor(item)
   }
   const formattedDate = date.toLocaleDateString('en-EUA')
   const formattedTime = date.toLocaleTimeString('en-EUA')
@@ -64,6 +68,7 @@ export function Create({ navigation }) {
   return (
     <Container>
       <Background>
+        <SvgBorder2/>
         <Close onPress={() => navigation.goBack()}><IconClose>X</IconClose></Close>
         <TextTitle>Add New Task</TextTitle>
       </Background>
@@ -76,9 +81,15 @@ export function Create({ navigation }) {
         />
         <ContainerRadio>
           <Category>Category</Category>
-          <RadioButton onPress={() => setCategoryOnPress(1)} img={require('../../img/Menu.png')} />
-          <RadioButton onPress={() => setCategoryOnPress(2)} img={require('../../img/Category.png')} />
-          <RadioButton onPress={() => setCategoryOnPress(3)} img={require('../../img/Winner.png')} />
+          <BorderRadio value={selectedColor === 0}>
+          <RadioButton onPress={() => setCategoryOnPress(0)} img={require('../../img/Menu.png')} />
+          </BorderRadio>
+          <BorderRadio value={selectedColor === 1}>
+          <RadioButton onPress={() => setCategoryOnPress(1)} img={require('../../img/Category.png')} />
+          </BorderRadio>
+          <BorderRadio value={selectedColor === 2}>
+          <RadioButton onPress={() => setCategoryOnPress(2)} img={require('../../img/Winner.png')} />
+          </BorderRadio>
         </ContainerRadio>
 
         <DatePicker

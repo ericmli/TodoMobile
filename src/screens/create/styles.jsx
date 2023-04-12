@@ -48,6 +48,12 @@ export const ContainerText = styled.View`
   margin-left: auto;
   margin-right: auto;
 `
+
+export const BorderRadio = styled.View`
+  background: ${(props) => props.value ? '#4A3780' : 'white'};
+  border-radius: 20px;
+`
+
 export const ContainerRadio = styled.View`
   display: flex;
   flex-direction: row;

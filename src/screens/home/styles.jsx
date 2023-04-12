@@ -29,6 +29,7 @@ export const ContainerList = styled.View`
   background: ${Theme.colors.white[10]};
   width: 90%;
   min-height: 25%;
+  max-height: 25%;
   margin-left: auto;
   margin-right: auto;
   bottom: 8%;
@@ -102,6 +103,7 @@ export const ContainerListFalse = styled.View`
   position: relative;
   background: ${Theme.colors.white[10]};
   width: 90%;
+  max-height: 25%;
   margin-left: auto;
   margin-right: auto;
   bottom: 2%;

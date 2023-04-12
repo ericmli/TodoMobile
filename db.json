@@ -10,7 +10,7 @@
     {
       "title": "Run 5K",
       "time": "4:00pm",
-      "status": true,
+      "status": false,
       "img": "https://cdn-icons-png.flaticon.com/128/8462/8462616.png",
       "bck": "#FEF5D3",
       "id": 2
@@ -18,7 +18,7 @@
     {
       "title": "Go to Party",
       "time": "10:00pm",
-      "status": true,
+      "status": false,
       "img": "https://cdn-icons-png.flaticon.com/128/8158/8158887.png",
       "bck": "#E7E2F3",
       "id": 3
@@ -30,6 +30,26 @@
       "img": "https://cdn-icons-png.flaticon.com/128/8158/8158887.png",
       "bck": "#E7E2F3",
       "id": 4
+    },
+    {
+      "title": "New",
+      "note": "",
+      "bck": "#FEF5D3",
+      "img": "https://cdn-icons-png.flaticon.com/128/8462/8462616.png",
+      "status": true,
+      "time": "8:00:00 PM",
+      "date": "4/12/2023",
+      "id": 5
+    },
+    {
+      "title": "Teste",
+      "note": "",
+      "bck": "#DBECF6",
+      "img": "https://cdn-icons-png.flaticon.com/128/9662/9662131.png",
+      "status": true,
+      "time": "7:41:49 PM",
+      "date": "4/12/2023",
+      "id": 6
     }
   ]
 }
